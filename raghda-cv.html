@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رغدة الشمري | السيرة الذاتية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E161D;
+    --panel: #16212B;
+    --panel-2: #1C2933;
+    --line: #2A3A45;
+    --text: #E7EEF2;
+    --muted: #92A5AF;
+    --signal: #F2B134;
+    --signal-dim: #6b551f;
+    --data: #3FC7B8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 85% -10%, #14202A 0%, transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans Arabic', sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--signal); color:#1a1200;}
+
+  a{color:var(--data); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--signal); outline-offset:3px;}
+
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px 80px;}
+
+  /* ---- HERO ---- */
+  .hero{
+    border-bottom:1px solid var(--line);
+    padding:56px 0 40px;
+    position:relative;
+  }
+  .tally{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Sans Arabic', sans-serif;
+    font-size:13px; letter-spacing:.02em; color:var(--signal);
+    border:1px solid var(--signal-dim);
+    background:rgba(242,177,52,0.06);
+    padding:6px 14px; border-radius:999px;
+    margin-bottom:28px;
+  }
+  .tally .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--signal);
+    box-shadow:0 0 0 0 rgba(242,177,52,.6);
+    animation:pulse 2.2s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(242,177,52,.55);}
+    70%{box-shadow:0 0 0 10px rgba(242,177,52,0);}
+    100%{box-shadow:0 0 0 0 rgba(242,177,52,0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .tally .dot{animation:none;}
+  }
+
+  h1{
+    font-family:'Cairo', sans-serif;
+    font-weight:900;
+    font-size:clamp(38px, 7vw, 64px);
+    margin:0 0 6px;
+    line-height:1.1;
+    color:#fff;
+  }
+  .role{
+    font-family:'Cairo', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--data);
+    margin:0 0 26px;
+  }
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:10px 22px;
+    font-size:15px; color:var(--muted);
+  }
+  .contact-row span{display:inline-flex; align-items:center; gap:8px;}
+  .contact-row svg{flex-shrink:0; opacity:.8;}
+
+  /* ---- SECTION SHELL ---- */
+  section{padding:44px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:26px;
+  }
+  .sec-head h2{
+    font-family:'Cairo', sans-serif;
+    font-weight:700;
+    font-size:24px;
+    color:#fff;
+    margin:0;
+    white-space:nowrap;
+  }
+  .sec-head .rule{height:1px; background:var(--line); flex:1;}
+
+  .lede{color:var(--muted); font-size:16.5px; max-width:62ch;}
+
+  /* ---- TIMELINE ---- */
+  .timeline{position:relative; padding-inline-start:26px; border-inline-start:1px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    right:-31px; top:6px;
+    width:10px; height:10px; border-radius:50%;
+    background:var(--panel);
+    border:2px solid var(--signal);
+  }
+  .tl-title{font-weight:600; font-size:17.5px; color:#fff; margin-bottom:4px;}
+  .tl-org{color:var(--data); font-size:14.5px; margin-bottom:10px;}
+  .tl-body{color:var(--muted); font-size:15.5px;}
+  .tl-body ul{margin:8px 0 0; padding-inline-start:20px;}
+  .tl-body li{margin-bottom:6px;}
+  .tl-sub{margin-top:16px; padding-inline-start:18px; border-inline-start:1px dashed var(--line);}
+  .tl-sub-item{margin-bottom:14px;}
+  .tl-sub-item:last-child{margin-bottom:0;}
+  .tl-sub-title{font-weight:600; color:var(--text); font-size:15.5px;}
+  .tl-sub-body{color:var(--muted); font-size:14.5px; margin-top:3px;}
+
+  /* ---- SKILLS ---- */
+  .skill-cols{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:640px){.skill-cols{grid-template-columns:1fr;}}
+  .skill-col h3{
+    font-size:14px; color:var(--signal); font-weight:600;
+    margin:0 0 14px;
+  }
+  .tag-list{display:flex; flex-wrap:wrap; gap:9px;}
+  .tag{
+    border:1px solid var(--line);
+    background:var(--panel);
+    color:var(--text);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:14.5px;
+  }
+
+  /* ---- COURSES ---- */
+  .course-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:640px){.course-grid{grid-template-columns:1fr;}}
+  .course{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+    font-size:15px;
+  }
+  .course .provider{display:block; color:var(--muted); font-size:13.5px; margin-top:4px;}
+
+  /* ---- FOOTER GRID: education / languages ---- */
+  .foot-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:640px){.foot-grid{grid-template-columns:1fr;}}
+  .foot-card h3{font-size:14px; color:var(--signal); font-weight:600; margin:0 0 10px;}
+  .foot-card p{margin:0 0 8px; color:var(--text); font-size:15.5px;}
+  .foot-card .dim{color:var(--muted); font-size:14px;}
+
+  footer{
+    text-align:center; padding:30px 0 0;
+    color:var(--muted); font-size:13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="tally"><span class="dot"></span> متاحة لفرص عمل جديدة</div>
+    <h1>رغدة الشمري</h1>
+    <p class="role">هندسة برمجيات · تقنية المعلومات والعلاقات الإعلامية</p>
+    <div class="contact-row">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        حائل، السعودية
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2Z"/></svg>
+        <a href="tel:0541816344">0541816344</a>
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6 12 13 2 6" stroke="currentColor" fill="none"/><path d="M2 6h20v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" fill="none"/></svg>
+        <a href="mailto:Theraghda@gmail.com">Theraghda@gmail.com</a>
+      </span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2>الهدف الوظيفي</h2><div class="rule"></div></div>
+    <p class="lede">الحصول على وظيفة تمكّنني من تطوير ذاتي، وتكسبني الخبرات والمهارات التي تؤهلني لأكون قادرة على الإسهام في تطوير جهة العمل لتحقيق الأهداف المشتركة.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>مسار الخبرات</h2><div class="rule"></div></div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-title">نائب رئيس تنفيذي</div>
+        <div class="tl-org">نادي إطار الإعلامي للإنتاج المرئي والمسموع</div>
+        <div class="tl-body">المساهمة في قيادة وإدارة أعمال النادي، والإشراف على تنفيذ المبادرات والمشاريع الإعلامية، ودعم تحقيق الأهداف الاستراتيجية وتعزيز كفاءة فرق العمل.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-title">أخصائي حاسب آلي</div>
+        <div class="tl-org">شركة تشغيلية لدى أمانة منطقة حائل — تركيب الشاشات وتقنية الاتصالات</div>
+        <div class="tl-body">
+          العمل ضمن فريق تقني بعدة مهام، من أبرزها:
+          <ul>
+            <li>رفع محتويات وإزالتها من شاشات الطرق والحدائق والجسور والإشارات والأعمدة.</li>
+            <li>إنشاء وتصميم موقع إلكتروني خاص بالشركة يعكس خدماتها ويعزز حضورها الرقمي.</li>
+            <li>ضبط الأجهزة المركّبة، بما في ذلك أنظمة كاميرات المراقبة، وأجهزة إدارة المواعيد، والشاشات الذكية.</li>
+            <li>تقديم الدعم الفني للمستخدمين وتدريبهم على تشغيل الشاشات.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-title">التدريب على رأس العمل (تمهير)</div>
+        <div class="tl-org">أمانة منطقة حائل</div>
+        <div class="tl-sub">
+          <div class="tl-sub-item">
+            <div class="tl-sub-title">إدارة التواصل الداخلي</div>
+            <div class="tl-sub-body">الإشراف على موقع إلكتروني خاص بالإدارة ومتابعة تنفيذه، والتنسيق مع جهات ومنشآت خارجية لضمان تكامل الجهود.</div>
+          </div>
+          <div class="tl-sub-item">
+            <div class="tl-sub-title">إدارة الجودة والامتثال</div>
+            <div class="tl-sub-body">الإشراف على تنظيم ملتقى "حياكم في حائل الأجمل" بالتعاون مع فريق الجودة، وإعداد المحتوى الإعلامي والتنسيق اللوجستي للملتقى.</div>
+          </div>
+          <div class="tl-sub-item">
+            <div class="tl-sub-title">وكالة الإسكان</div>
+            <div class="tl-sub-body">تنفيذ مهام إدارية وفنية شملت التنسيق بين الفرق، وإعداد التقارير، ودعم المبادرات الإسكانية.</div>
+          </div>
+          <div class="tl-sub-item">
+            <div class="tl-sub-title">تنظيم وإدارة الحشود — المعارض والمؤتمرات</div>
+            <div class="tl-sub-body">تنظيم الفعاليات والرحلات المرتبطة بها، وإعداد الجداول الزمنية، والتنسيق مع مختلف الجهات لضمان جودة التنفيذ.</div>
+          </div>
+          <div class="tl-sub-item">
+            <div class="tl-sub-title">العلاقات العامة والإعلام</div>
+            <div class="tl-sub-body">خبرة سنتين شملت بناء علاقات مهنية إيجابية، وصياغة الرسائل الإعلامية، والتنسيق بين الأقسام لتحقيق أهداف المؤسسة.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-title">التدريب التعاوني</div>
+        <div class="tl-org">أمانة منطقة حائل — قسم التطبيقات، إدارة تقنية المعلومات</div>
+        <div class="tl-body">المشاركة في تنفيذ عدة مهام تقنية ضمن قسم التطبيقات.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-title">تقديم دورة الذكاء الاصطناعي</div>
+        <div class="tl-org">لدى جمعيات خيرية</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>المهارات</h2><div class="rule"></div></div>
+    <div class="skill-cols">
+      <div class="skill-col">
+        <h3>مهارات ناعمة</h3>
+        <div class="tag-list">
+          <span class="tag">القيادة وإدارة الفرق</span>
+          <span class="tag">التواصل الفعّال</span>
+          <span class="tag">حل المشكلات</span>
+          <span class="tag">المرونة والتكيف</span>
+          <span class="tag">إدارة الوقت</span>
+          <span class="tag">الذكاء العاطفي</span>
+        </div>
+      </div>
+      <div class="skill-col">
+        <h3>مهارات صلبة</h3>
+        <div class="tag-list">
+          <span class="tag">حل المشكلات التقنية</span>
+          <span class="tag">تنظيم وإدارة قواعد البيانات</span>
+          <span class="tag">Power BI Desktop</span>
+          <span class="tag">إنشاء التقارير</span>
+          <span class="tag">التنسيق الإعلامي والعلاقات العامة</span>
+          <span class="tag">Microsoft Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>الدورات والشهادات</h2><div class="rule"></div></div>
+    <div class="course-grid">
+      <div class="course">PMP® Certification Training Course</div>
+      <div class="course">Introduction to Project Management Professional (PMP)<span class="provider">Microsoft Excel</span></div>
+      <div class="course">Introduction to HTML<span class="provider">أكاديمية طويق</span></div>
+      <div class="course">Business Intelligence Using Microsoft Power BI Desktop<span class="provider">منصة إثرائي</span></div>
+      <div class="course">Fundamentals of Artificial Intelligence</div>
+      <div class="course">Artificial Intelligence Concepts and Advanced Applications<span class="provider">SDAIA — الهيئة السعودية للبيانات والذكاء الاصطناعي</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="foot-grid">
+      <div class="foot-card">
+        <h3>التعليم</h3>
+        <p>بكالوريوس هندسة البرمجيات</p>
+        <p class="dim">جامعة حائل</p>
+      </div>
+      <div class="foot-card">
+        <h3>اللغات</h3>
+        <p>العربية <span class="dim">— اللغة الأم</span></p>
+        <p>الإنجليزية <span class="dim">— متقدم، تحدثًا وكتابة</span></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>رغدة الشمري · حائل، السعودية</footer>
+
+</div>
+</body>
+</html>
